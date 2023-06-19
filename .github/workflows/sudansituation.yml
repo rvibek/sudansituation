@@ -28,8 +28,8 @@ jobs:
         run: python sudansituation_fetch.py
 
       - name: Commit and push CSV files
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
