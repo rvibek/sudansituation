@@ -35,5 +35,5 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add sudansituation_data_latest.csv sudansituation_data_historical.csv
           git commit -m "Update CSV files"
-          git remote set-url origin https://github.com/rvibek/sudansituation.git
-          git push origin HEAD:main
+          # git remote set-url origin https://github.com/rvibek/sudansituation.git
+          git push
