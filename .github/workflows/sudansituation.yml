@@ -28,9 +28,12 @@ jobs:
         run: python sudansituation_fetch.py
 
       - name: Commit and push CSV files
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add sudansituation_data_latest.csv sudansituation_data_historical.csv
           git commit -m "Update CSV files"
-          git push
+          git remote set-url origin https://github.com/rvibek/sudansituation.git
+          git push origin HEAD:main
