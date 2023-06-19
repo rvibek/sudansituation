@@ -1,0 +1,32 @@
+name: Sudan Situation Fetch
+
+on:
+  schedule:
+    - cron: "0 22 * * *"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sudansituation_fetch.py
+        run: python sudansituation_fetch.py
+
+      - name: Commit and push CSV files
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add sudansituation_data_latest.csv sudansituation_data_historical.csv
+          git commit -m "Update CSV files"
+          git push
