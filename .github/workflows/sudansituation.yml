@@ -38,3 +38,4 @@ jobs:
           git add sudansituation_data_latest.csv sudansituation_data_historical.csv
           git commit -m "Update CSV files"
           git push  origin HEAD:main
+          
