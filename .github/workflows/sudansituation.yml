@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -27,6 +25,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run sudansituation_fetch.py
+        env: 
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
         run: python sudansituation_fetch.py
 
       - name: Commit and push CSV files
@@ -35,7 +37,13 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git add sudansituation_data_latest.csv sudansituation_data_historical.csv
-          git commit -m "Update CSV files"
-          git push  origin HEAD:main
-          
+          git add -A
+          git commit -m "update data" -a
+      
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main  
+
