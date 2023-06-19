@@ -32,6 +32,8 @@ jobs:
         run: python sudansituation_fetch.py
 
       - name: Commit and push CSV files
+        env:
+          GITHUB_ACTIONS_BOT_TOKEN: ${{ secrets.GITHUB_ACTIONS_BOT_TOKEN }
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
@@ -43,6 +45,5 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_ACTIONS_BOT_TOKEN: ${{ secrets.GITHUB_ACTIONS_BOT_TOKEN }
           branch: main  
 
