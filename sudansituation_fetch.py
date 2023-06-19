@@ -28,7 +28,8 @@ def update_historical():
     filename = "sudansituation_data_historical.csv"
     with open(filename, 'a', newline='') as file:
         writer = csv.writer(file)
-        reader = csv.reader(data.splitlines())
+        lines = data.splitlines()
+        reader = csv.reader(lines[1:])
         for row in reader:
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Get the current timestamp
             writer.writerow([timestamp] + row)  # Add the timestamp as the first column in each row
