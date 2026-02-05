@@ -1,8 +1,8 @@
-Country,Data Date,Refugee returnees,Sudanese refugees/asylum seekers,Non-Sudanese refugees/asylum seekers,Total refugees,Total New Arrivals,Individually Registered Refugees,Source
-Chad,2026-02-02,,910740,,910740,910740,884422,UNHCR & Government
-South Sudan,2026-02-02,848247,430539,4569,435108,1283355,259240,"UNHCR, IOM & Government"
-Egypt,2025-01-31,,,,1500000,1500000,814449,UNHCR & Government
-Libya*,2026-01-25,,550000,,550000,550000,72253,UNHCR & Government
-Uganda,2026-02-02,,89229,,89229,89229,89229,UNHCR & Government
-Ethiopia,2025-11-30,21393,45118,10708,55826,77219,45118,UNHCR & Government
-CAR,2025-12-14,6911,40332,,40332,47243,37679,UNHCR & Government
+Country,Data Date,Refugee returnees,Sudanese refugees/asylum seekers,Total refugees,Total New Arrivals,Individually Registered Refugees,Source
+Chad,2026-02-02,,910740,910740,910740,884422,UNHCR & Government
+South Sudan,2026-02-02,848247,430539,430539,1278786,259240,"UNHCR, IOM & Government"
+Egypt,2025-01-31,,,1500000,1500000,814449,UNHCR & Government
+Libya*,2026-01-25,,550000,550000,550000,72253,UNHCR & Government
+Uganda,2026-02-02,,89229,89229,89229,89229,UNHCR & Government
+Ethiopia,2025-11-30,21393,45118,45118,66511,45118,UNHCR & Government
+CAR,2025-12-14,6911,40332,40332,47243,37679,UNHCR & Government
